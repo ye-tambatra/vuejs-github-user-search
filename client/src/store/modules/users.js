@@ -51,16 +51,6 @@ const actions = {
         commit("setLoading", true);
         commit("setError", false);
         try {
-            // const response = await axios.get(
-            //     "https://github-user-search-backend.onrender.com/api/search/users",
-            //     {
-            //         params: {
-            //             q: username,
-            //             page: state.page,
-            //             per_page: perPage,
-            //         },
-            //     }
-            // );
             const data = await fetchUsers({
                 q: username,
                 page: state.page,
@@ -70,7 +60,8 @@ const actions = {
             commit("setTotalCount", data.total_count);
             commit("setHasPreviousPage", state.page > 1);
             commit("setHasNextPage", data.total_count > state.page * perPage);
-        } catch {
+        } catch (error) {
+            console.log(error);
             commit("setError", true);
         } finally {
             commit("setLoading", false);

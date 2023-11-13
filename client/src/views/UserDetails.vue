@@ -65,7 +65,6 @@ import RepoListItem from "../components/RepoListItem.vue";
 import AvatarList from "../components/AvatarList.vue";
 import RepoList from "../components/RepoList.vue";
 import { fetchFollowers, fetchFollowings, fetchUser } from "../utils/api";
-import axios from "axios";
 
 export default {
     components: {
@@ -96,35 +95,6 @@ export default {
     },
 
     methods: {
-        // fetchFollowers() {
-        //     return axios
-        //         .get(
-        //             "https://github-user-search-backend.onrender.com/api/users/" +
-        //                 this.username +
-        //                 "/followers?per_page=7"
-        //         )
-        //         .then((res) => res.data);
-        // },
-
-        // fetchUser() {
-        //     return axios
-        //         .get(
-        //             "https://github-user-search-backend.onrender.com/api/users/" +
-        //                 this.username
-        //         )
-        //         .then((res) => res.data);
-        // },
-
-        // fetchFollowing() {
-        //     return axios
-        //         .get(
-        //             "https://github-user-search-backend.onrender.com/api/users/" +
-        //                 this.username +
-        //                 "/following?per_page=7"
-        //         )
-        //         .then((res) => res.data);
-        // },
-
         fetchData() {
             this.loading = true;
             this.error = false;

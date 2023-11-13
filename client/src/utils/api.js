@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const BACKEND_URL = import.meta.env.BACKEND_URL || "http://localhost:8000";
 
 export function fetchUser(username) {
@@ -15,6 +17,17 @@ export function fetchFollowers(username) {
 export function fetchFollowings(username) {
     return axios
         .get(`${BACKEND_URL}/api/users/${username}/following?per_page=7`)
+        .then((res) => res.data);
+}
+
+export function fetchRepos({ username, page, per_page }) {
+    return axios
+        .get(`${BACKEND_URL}/api/users/${username}/repos`, {
+            params: {
+                page,
+                per_page,
+            },
+        })
         .then((res) => res.data);
 }
 
