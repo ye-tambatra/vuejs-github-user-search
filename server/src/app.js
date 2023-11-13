@@ -42,6 +42,7 @@ app.all("/api/*", async (req, res) => {
     }
 });
 
-preventHibernation();
-
-app.listen(process.env.PORT || 8000, () => console.log("Server running"));
+app.listen(process.env.PORT || 8000, () => {
+    console.log("Server running");
+    preventHibernation();
+});
