@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BACKEND_URL = import.meta.env.BACKEND_URL || "http://localhost:8000";
+const BACKEND_URL = import.meta.env.BACKEND_URL;
 
 export function fetchUser(username) {
     return axios
