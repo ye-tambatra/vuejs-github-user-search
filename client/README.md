@@ -1,3 +1,3 @@
 ### Required .env variables
 
-BACKEND_URL=my_backend
+VITE_BACKEND_URL=my_backend
